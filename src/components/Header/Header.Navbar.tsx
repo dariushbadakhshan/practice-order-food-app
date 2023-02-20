@@ -1,6 +1,7 @@
+import style from "./Header.Navbar.module.scss";
 const Navbar = () => {
   return (
-    <nav>
+    <nav className={style.navbar}>
       <div>
         <p>Omnia Food</p>
       </div>
