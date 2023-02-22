@@ -1,5 +1,7 @@
 import MenuItem from "./menu-item";
 
+import classes from "./menu.module.scss";
+
 const items_list = [
   {
     id: "m1",
@@ -30,11 +32,13 @@ const items_list = [
     img: "../../images/green-bowl.jpg",
   },
 ];
+
 const Menu = () => {
   const menuItem = items_list.map((item) => (
     <MenuItem key={item.id} item={item} />
   ));
-  return <div>{menuItem}</div>;
+
+  return <div className={classes.meals}>{menuItem}</div>;
 };
 
 export default Menu;
