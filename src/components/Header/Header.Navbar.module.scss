@@ -1,0 +1,12 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 3rem;
+  padding: 1rem;
+}
+.logo {
+  & p {
+    color: #8a2b06;
+  }
+}
