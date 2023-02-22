@@ -1,5 +1,9 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
+
+import CartContext from "../store/cart-context";
+
 import AddItem from "./add-item.menu";
+
 import MenuContent from "./item.content.menu";
 
 type props = {
@@ -11,7 +15,19 @@ type props = {
     img: string;
   };
 };
+
 const MenuItem: FC<props> = ({ item }) => {
+  const cartCtx = useContext(CartContext);
+
+  const addToCartHandler = (amount: number) => {
+    cartCtx.addItem({
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      amount: amount,
+    });
+  };
+
   return (
     <div>
       <MenuContent
@@ -20,7 +36,7 @@ const MenuItem: FC<props> = ({ item }) => {
         price={item.price}
         url={item.img}
       />
-      <AddItem />
+      <AddItem onAddToCard={addToCartHandler} />
     </div>
   );
 };
