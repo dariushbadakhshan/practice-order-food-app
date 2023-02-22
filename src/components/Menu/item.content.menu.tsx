@@ -1,5 +1,6 @@
 import { FC } from "react";
 
+import classes from "./item.content.menu.module.scss";
 import Image from "./UI/image-item.menu";
 
 type props = {
@@ -11,7 +12,7 @@ type props = {
 
 const MenuContent: FC<props> = ({ url, title, description, price }) => {
   return (
-    <div>
+    <div className={classes.content}>
       <Image url={url} />
       <h2>{title} </h2>
       <p>{description} </p>

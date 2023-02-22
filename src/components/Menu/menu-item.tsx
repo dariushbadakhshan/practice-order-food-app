@@ -6,6 +6,8 @@ import AddItem from "./add-item.menu";
 
 import MenuContent from "./item.content.menu";
 
+import classes from "./menu-item.module.scss";
+
 type props = {
   item: {
     id: string;
@@ -29,7 +31,7 @@ const MenuItem: FC<props> = ({ item }) => {
   };
 
   return (
-    <div>
+    <div className={classes.item}>
       <MenuContent
         title={item.name}
         description={item.description}

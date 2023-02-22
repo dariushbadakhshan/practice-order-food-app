@@ -1,5 +1,6 @@
 import { FC, FormEvent, useRef, useState } from "react";
 
+import classes from "./add-item.menu.module.scss";
 import Input from "../../UI/input";
 
 type props = {
@@ -31,24 +32,23 @@ const AddItem: FC<props> = ({ onAddToCard }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={submitHandler}>
-        <Input
-          ref={amountInput}
-          label="amount"
-          input={{
-            id: "amount",
-            type: "number",
-            min: "1",
-            max: "5",
-            step: "1",
-            defaultValue: "1",
-          }}
-        />
-        <button>+ Add</button>
-        {!amountIsValid && <p>Please enter a valid amount (1-5).</p>}
-      </form>
-    </div>
+    <form className={classes.form} onSubmit={submitHandler}>
+      <Input
+        ref={amountInput}
+        label="amount"
+        input={{
+          id: "amount",
+          type: "number",
+          min: "1",
+          max: "5",
+          step: "1",
+          defaultValue: "1",
+        }}
+      />
+
+      <button>+ Add</button>
+      {!amountIsValid && <p>Please enter a valid amount (1-5).</p>}
+    </form>
   );
 };
 export default AddItem;

@@ -52,11 +52,7 @@ const CartModal: FC<props> = ({ onClose }) => {
         {totalAmount}
       </div>
       <div className={classes.actions}>
-        <button
-          className={classes["button--alt"]}
-          style={{ color: "blue" }}
-          onClick={onClose}
-        >
+        <button className={classes["button--alt"]} onClick={onClose}>
           Close
         </button>
         {hasItems && <button className={classes.button}>Order</button>}
